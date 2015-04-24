@@ -7,6 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'timezone-ii'
-include_recipe 'timezone-nativex::windows'
+if windows?
+	include_recipe 'timezone-nativex::windows'
+else
+	include_recipe 'timezone-ii'
+end
 

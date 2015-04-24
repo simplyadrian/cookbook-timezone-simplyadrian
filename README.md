@@ -1,23 +1,27 @@
 timezone-nativex Cookbook
 =========================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook sets the systems timezone according to the attribute.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
 #### packages
-- `toaster` - timezone-nativex needs toaster to brown your bagel.
+- `timezone-ii` - timezone-nativex wraps `timezone-ii` to set the timezone on linux systems https://github.com/L2G/timezone-ii.git.
+- `chef-sugar` - Official chef-sugar cookbook from sethvargo https://github.com/sethvargo/chef-sugar.git
+
+#### libraries
+- `Chef::Provider::PowershellScript` - timezone-nativex uses the powershell script provider to execute tzutil on windows systems.
+
+* Chef 11 or higher
+
+#### Supported OS Distributions
+Tested on:
+
+* CentOS 6.5 x86_64 HVM minimal
+* Windows Server 2008 R2 (features only)
+* Windows Server 2012 Family
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
 #### timezone-nativex::default
 <table>
   <tr>
@@ -27,19 +31,23 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['timezone-nativex']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['timezone-ii']['tz']</tt></td>
+    <td>String</td>
+    <td>the timezone name as defined in tzdata</td>
+    <td><tt>America/Chicago</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['timezone-nativex']['windows_tz']</tt></td>
+    <td>String</td>
+    <td>the timezone name as defined in [system.timezoneinfo]::local</td>
+    <td><tt>Central Standard Time</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### timezone-nativex::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `timezone-nativex` in your node's `run_list`:
 
 ```json
@@ -51,18 +59,6 @@ Just include `timezone-nativex` in your node's `run_list`:
 }
 ```
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Adrian Herrera (<simplyadrian@gmail.com>)

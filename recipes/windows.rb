@@ -11,7 +11,7 @@ Chef::Provider::PowershellScript.send(:include, TimezoneNativex::Helper)
 
 powershell_script "set windows timezone" do
   code <<-EOH
-  tzutil.exe /s "#{node['timezone-nativex']['windows_tz_name']}"
+  tzutil.exe /s "#{node['timezone-nativex']['windows_tz']}"
   EOH
   not_if {timezone_set?}
 end
