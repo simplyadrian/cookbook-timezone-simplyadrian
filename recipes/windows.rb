@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-Chef::Provider::PowershellScript.send(:include, TimezoneNativex::Helper)
+::Chef::Provider::PowershellScript.send(:include, TimezoneNativex::Helper)
 
 powershell_script "set windows timezone" do
   code <<-EOH
