@@ -13,5 +13,5 @@ powershell_script "set windows timezone" do
   code <<-EOH
   tzutil.exe /s "#{node['timezone-nativex']['windows_tz']}"
   EOH
-  not_if {timezone_set?}
+  #not_if {timezone_set?}
 end
