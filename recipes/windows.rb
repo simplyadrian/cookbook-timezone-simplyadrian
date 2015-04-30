@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
- ::Chef::Recipe.send(:include, TimezoneNativex::Helper)
+ Chef::Resource.send(:include, TimezoneNativex::Helper)
 
 powershell_script "set windows timezone" do
   code <<-EOH
