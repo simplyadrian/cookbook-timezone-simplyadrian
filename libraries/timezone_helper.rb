@@ -6,7 +6,7 @@ module TimezoneNativex
   
     def timezone_set?
       check = shell_out.new("powershell.exe -command [system.timezoneinfo]::local").run_command
-      check.stdout.grep("#{node['timezone-nativex']['windows_tz']}")
+      check.stdout.any? ("#{node['timezone-nativex']['windows_tz']}")
     end
   end
 end
