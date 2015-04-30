@@ -31,7 +31,7 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['timezone-ii']['tz']</tt></td>
+    <td><tt>['tz']</tt></td>
     <td>String</td>
     <td>the timezone name as defined in tzdata</td>
     <td><tt>America/Chicago</tt></td>
