@@ -3,9 +3,10 @@ timezone-nativex CHANGELOG
 
 This file is used to list changes made in each version of the timezone-nativex cookbook.
 
-0.1.0
+1.0.0
 -----
-- [your_name] - Initial release of timezone-nativex
+- [Adrian Herrera] - Production release of timezone-nativex
+  - Sets timezone on windows an linux systems
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
