@@ -1,4 +1,4 @@
-module TimezoneNativex
+module TimezoneSimplyadrian
   module Helper
 
   include Chef::Mixin::ShellOut
@@ -6,7 +6,7 @@ module TimezoneNativex
   
     def timezone_set?
       check = shell_out.new("powershell.exe -command [system.timezoneinfo]::local").run_command
-      check.stdout.any? ("#{node['timezone-nativex']['windows_tz']}")
+      check.stdout.any? ("#{node['timezone-simplyadrian']['windows_tz']}")
     end
   end
 end
